@@ -12,9 +12,8 @@ class Dialog(QDialog):
         super(Dialog, self).__init__()
         self.createFormGroupBox()
         
-        buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttonBox = QDialogButtonBox(QDialogButtonBox.Ok)
         buttonBox.accepted.connect(self.accept)
-        buttonBox.rejected.connect(self.reject)
         
         mainLayout = QVBoxLayout()
         mainLayout.addWidget(self.formGroupBox)
@@ -27,12 +26,14 @@ class Dialog(QDialog):
         self.formGroupBox = QGroupBox()
         layout = QFormLayout()
         layout.addRow(QLabel("SymLInk Name"))
-        layout.addRow(QLineEdit())
+        SymName = layout.addRow(QLineEdit())
         layout.addRow(QLabel("Target (where the link will point to)"))
-        layout.addRow(QLineEdit())
+        SymTarget = layout.addRow(QLineEdit())
         layout.addRow(QLabel("Location (where the link will appear)"))
-        layout.addRow(QLineEdit())
+        SymLoc = layout.addRow(QLineEdit())
         self.formGroupBox.setLayout(layout)
+
+    # SymCommand = str('mklink /D "' + SymLoc + '/' + SymName + '" "' + SymTarget)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
