@@ -35,6 +35,12 @@ class Dialog(QDialog):
 
     # SymCommand = str('mklink /D "' + SymLoc + '/' + SymName + '" "' + SymTarget)
 
+    @QDialogButtonBox()
+    def on_click(self):
+        SymCommand = 'mklink /D "' + SymLoc + '/' + SymName + '" "' + SymTarget
+        QMessageBox.question(self, SymCommand)
+        self.textbox.setText("")
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     dialog = Dialog()
