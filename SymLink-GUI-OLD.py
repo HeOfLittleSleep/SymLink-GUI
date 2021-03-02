@@ -34,7 +34,7 @@ class App(QMainWindow):
     @pyqtSlot()
     def on_click(self):
         textboxValue = self.textbox.text()
-        QMessageBox.question(self, 'Message - pythonspot.com', "You typed: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
+        QMessageBox.question(self, 'Message - pythonspot.com', "You typed: " + textboxValue, QMessageBox.Ok)
         self.textbox.setText("")
     
 if __name__ == '__main__':

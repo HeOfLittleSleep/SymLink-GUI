@@ -5,9 +5,15 @@
 # Written By Timothy Potter (HeOfLittleSleep) with python 3.9.2
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtWidgets import QMessageBox
+
+def on_click(self):
+    print("oh hey it works hooray and stuff")
 
 
 class Ui_MainWindow(object):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("SymLinkGen")
         MainWindow.resize(183, 250)
@@ -37,9 +43,13 @@ class Ui_MainWindow(object):
         self.lineEdit_3 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
         self.lineEdit_3.setObjectName("SymLoc")
         self.verticalLayout.addWidget(self.lineEdit_3)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 180, 158, 23))
-        self.pushButton.setObjectName("GenLinkBtn")
+
+        GenLinkBtn = QtWidgets.QPushButton(self.centralwidget)
+        GenLinkBtn.setGeometry(QtCore.QRect(10, 180, 158, 23))
+        GenLinkBtn.setObjectName("BtnGenLink")
+        GenLinkBtn.setText("Generate SymLink")
+        GenLinkBtn.clicked.connect(on_click)
+        
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 183, 21))
@@ -61,13 +71,8 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "SymLink Name"))
         self.label_2.setText(_translate("MainWindow", "SymLink Target"))
         self.label_3.setText(_translate("MainWindow", "SymLink Location"))
-        self.pushButton.setText(_translate("MainWindow", "Generate SymLink"))
+        # GenLinkBtn.setText(_translate("MainWindow", "Generate SymLink"))
         self.menuSymLink_generator.setTitle(_translate("MainWindow", "SymLink Generator"))
-
-    @GenLinkBtn()
-    def on_click(self):
-        QMessageBox.question(self, 'Message - pythonspot.com', "You typed: ")
-
 
 if __name__ == "__main__":
     import sys
