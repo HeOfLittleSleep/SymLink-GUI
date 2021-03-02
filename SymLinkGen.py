@@ -9,7 +9,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("SymLinkGen")
         MainWindow.resize(183, 250)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -23,23 +23,23 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
         self.lineEdit = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit.setObjectName("SymName")
         self.verticalLayout.addWidget(self.lineEdit)
         self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_2.setObjectName("SymTarget")
         self.verticalLayout.addWidget(self.lineEdit_2)
         self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label_3.setObjectName("label_3")
         self.verticalLayout.addWidget(self.label_3)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_3.setObjectName("SymLoc")
         self.verticalLayout.addWidget(self.lineEdit_3)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(10, 180, 158, 23))
-        self.pushButton.setObjectName("pushButton")
+        self.pushButton.setObjectName("GenLinkBtn")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 183, 21))
@@ -57,12 +57,16 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "SymLink Generator"))
         self.label.setText(_translate("MainWindow", "SymLink Name"))
         self.label_2.setText(_translate("MainWindow", "SymLink Target"))
         self.label_3.setText(_translate("MainWindow", "SymLink Location"))
         self.pushButton.setText(_translate("MainWindow", "Generate SymLink"))
-        self.menuSymLink_generator.setTitle(_translate("MainWindow", "SymLink generator"))
+        self.menuSymLink_generator.setTitle(_translate("MainWindow", "SymLink Generator"))
+
+    @GenLinkBtn()
+    def on_click(self):
+        QMessageBox.question(self, 'Message - pythonspot.com', "You typed: ")
 
 
 if __name__ == "__main__":
