@@ -7,9 +7,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QMessageBox
+import os
 
 def on_click(self):
-    print("oh hey it works hooray and stuff")
+
+    print("chosen target is  " + SymTargetTxt)
+    # os.system("ls")
 
 
 class Ui_MainWindow(object):
@@ -25,24 +28,30 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
+
         self.label = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
-        self.lineEdit = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit.setObjectName("SymName")
-        self.verticalLayout.addWidget(self.lineEdit)
+
+        SymNameTxt = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        SymNameTxt.setObjectName("SymName")
+        self.verticalLayout.addWidget(SymNameTxt)
+
         self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit_2.setObjectName("SymTarget")
-        self.verticalLayout.addWidget(self.lineEdit_2)
+
+        SymTargetTxt = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        SymTargetTxt.setObjectName("SymTarget")
+        self.verticalLayout.addWidget(SymTargetTxt)
+
         self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label_3.setObjectName("label_3")
         self.verticalLayout.addWidget(self.label_3)
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit_3.setObjectName("SymLoc")
-        self.verticalLayout.addWidget(self.lineEdit_3)
+
+        SymLocTxt = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        SymLocTxt.setObjectName("SymLoc")
+        self.verticalLayout.addWidget(SymLocTxt)
 
         GenLinkBtn = QtWidgets.QPushButton(self.centralwidget)
         GenLinkBtn.setGeometry(QtCore.QRect(10, 180, 158, 23))
