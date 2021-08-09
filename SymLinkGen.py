@@ -10,7 +10,6 @@ from PyQt5.QtWidgets import QMessageBox
 import os
 
 def on_click(self):
-
     print("chosen target is  " + SymTargetTxt)
     # os.system("ls")
 
