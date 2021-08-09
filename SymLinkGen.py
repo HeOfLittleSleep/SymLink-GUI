@@ -82,6 +82,7 @@ class Ui_MainWindow(object):
         # GenLinkBtn.setText(_translate("MainWindow", "Generate SymLink"))
         self.menuSymLink_generator.setTitle(_translate("MainWindow", "SymLink Generator"))
 
+#actually displays the main window
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
