@@ -6,18 +6,20 @@ def generate_symlink():
   symName = strSymName.get()
   symTarget = strSymTarget.get()
   symLocation = strSymLocation.get()
-  print(symName, symTarget, symLocation)
+  symGenCmd =  'mklink /D "' + symLocation + '\\' + symName + '"' + ' "' + symTarget + '"'
 
-  #file = open("user.txt", "w")
-  #file.write(firstname_info)
-  #file.write(lastname_info)
-  #file.write(age_info)
-  #file.close()
-  #print(" User ", firstname_info, " has been registered successfully")
+  print(symGenCmd)
+  #print(symName, symTarget, symLocation)
 
-  #firstname_entry.delete(0, END)
-  #lastname_entry.delete(0, END)
-  #age_entry.delete(0, END)
+  symLNameEntry.delete(0, END)
+  symLTargetEntry.delete(0, END)
+  symLLocationEntry.delete(0, END)
+
+#def file_opener():
+   #input = filedialog.askopenfile(initialdir="/")
+   #print(input)
+   #for i in input:
+      #print(i)
   
 mainWindow = Tk()
 mainWindow.geometry("250x350")
