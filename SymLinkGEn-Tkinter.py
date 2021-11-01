@@ -1,5 +1,5 @@
 from tkinter import *
-#import tkFileDialog
+#from tkinter import filedialog
 import os
 
 def generate_symlink():
@@ -19,18 +19,18 @@ def generate_symlink():
   #lastname_entry.delete(0, END)
   #age_entry.delete(0, END)
   
-mainwindow = Tk()
-mainwindow.geometry("250x350")
-mainwindow.title("SymLink Generator")
+mainWindow = Tk()
+mainWindow.geometry("250x350")
+mainWindow.title("SymLink Generator")
 #heading = Label(text = "Python Form", bg = "grey", fg = "black", width = "500", height = "3")
 #heading.pack()
  
 symLNameLabel = Label(text = "Symlink Name",)
 symLTargetLabel = Label(text = "SymLink Target",)
 symLLocationLabel = Label(text = "Symlink Location",)
-symLNameLabel.place(x = 15, y = 70)
-symLTargetLabel.place(x = 15, y = 140)
-symLLocationLabel.place(x = 15, y = 210)
+symLNameLabel.place(x = 15, y = 10)
+symLTargetLabel.place(x = 15, y = 55)
+symLLocationLabel.place(x = 15, y = 100)
 
 
 strSymName = StringVar()
@@ -41,11 +41,14 @@ symLNameEntry = Entry(textvariable = strSymName, width = "30")
 symLTargetEntry = Entry(textvariable = strSymTarget, width = "30")
 symLLocationEntry = Entry(textvariable = strSymLocation, width = "30")
 
-symLNameEntry.place(x = 15, y = 100)
-symLTargetEntry.place(x = 15, y = 180)
-symLLocationEntry.place(x = 15, y = 240)
+symLNameEntry.place(x = 15, y = 30)
+symLTargetEntry.place(x = 15, y = 75)
+symLLocationEntry.place(x = 15, y = 120)
 
-genSym = Button(mainwindow,text = "Generate SymLink", width = "30", height = "2", command = generate_symlink, bg = "grey")
+genSym = Button(mainWindow,text = "Generate SymLink", width = "30", height = "2", command = generate_symlink, bg = "grey")
 genSym.place(x = 15, y = 290)
 
-mainwindow.mainloop()
+#browseTarget = Button(mainWindow, text ='...', command = lambda:file_opener())
+#browseTarget.place()
+
+mainWindow.mainloop()
