@@ -1,6 +1,7 @@
 from tkinter import *
 #from tkinter import filedialog
 import os
+#import win32com.shell.shell as shell
 
 def generate_symlink():
   symName = strSymName.get()
@@ -16,6 +17,7 @@ def generate_symlink():
   symLLocationEntry.delete(0, END)
 
   os.system(symGenCmd)
+  #shell.ShellExecuteEx(lpVerb='runas', lpFile='cmd.exe', lpParameters='/c '+symGenCmd)
 
 #def file_opener():
    #input = filedialog.askopenfile(initialdir="/")
@@ -26,8 +28,6 @@ def generate_symlink():
 mainWindow = Tk()
 mainWindow.geometry("250x350")
 mainWindow.title("SymLink Generator")
-#heading = Label(text = "Python Form", bg = "grey", fg = "black", width = "500", height = "3")
-#heading.pack()
  
 symLNameLabel = Label(text = "Symlink Name",)
 symLTargetLabel = Label(text = "SymLink Target",)
