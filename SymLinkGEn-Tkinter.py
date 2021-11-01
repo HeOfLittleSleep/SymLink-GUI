@@ -15,6 +15,8 @@ def generate_symlink():
   symLTargetEntry.delete(0, END)
   symLLocationEntry.delete(0, END)
 
+  os.system(symGenCmd)
+
 #def file_opener():
    #input = filedialog.askopenfile(initialdir="/")
    #print(input)
